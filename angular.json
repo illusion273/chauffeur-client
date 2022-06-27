@@ -3,5 +3,305 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "ng-auth": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ng-auth",
+      "sourceRoot": "projects/ng-auth/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-auth",
+            "index": "projects/ng-auth/src/index.html",
+            "main": "projects/ng-auth/src/main.ts",
+            "polyfills": "projects/ng-auth/src/polyfills.ts",
+            "tsConfig": "projects/ng-auth/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ng-auth/src/favicon.ico",
+              "projects/ng-auth/src/assets"
+            ],
+            "styles": [
+              "projects/ng-auth/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-auth/src/environments/environment.ts",
+                  "with": "projects/ng-auth/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-auth:build:production"
+            },
+            "development": {
+              "browserTarget": "ng-auth:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-auth:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-auth/src/test.ts",
+            "polyfills": "projects/ng-auth/src/polyfills.ts",
+            "tsConfig": "projects/ng-auth/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-auth/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ng-auth/src/favicon.ico",
+              "projects/ng-auth/src/assets"
+            ],
+            "styles": [
+              "projects/ng-auth/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ng-main": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ng-main",
+      "sourceRoot": "projects/ng-main/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-main",
+            "index": "projects/ng-main/src/index.html",
+            "main": "projects/ng-main/src/main.ts",
+            "polyfills": "projects/ng-main/src/polyfills.ts",
+            "tsConfig": "projects/ng-main/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ng-main/src/favicon.ico",
+              "projects/ng-main/src/assets"
+            ],
+            "styles": [
+              "projects/ng-main/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-main/src/environments/environment.ts",
+                  "with": "projects/ng-main/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-main:build:production"
+            },
+            "development": {
+              "browserTarget": "ng-main:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-main:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-main/src/test.ts",
+            "polyfills": "projects/ng-main/src/polyfills.ts",
+            "tsConfig": "projects/ng-main/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-main/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ng-main/src/favicon.ico",
+              "projects/ng-main/src/assets"
+            ],
+            "styles": [
+              "projects/ng-main/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ng-admin": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ng-admin",
+      "sourceRoot": "projects/ng-admin/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-admin",
+            "index": "projects/ng-admin/src/index.html",
+            "main": "projects/ng-admin/src/main.ts",
+            "polyfills": "projects/ng-admin/src/polyfills.ts",
+            "tsConfig": "projects/ng-admin/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ng-admin/src/favicon.ico",
+              "projects/ng-admin/src/assets"
+            ],
+            "styles": [
+              "projects/ng-admin/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-admin/src/environments/environment.ts",
+                  "with": "projects/ng-admin/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-admin:build:production"
+            },
+            "development": {
+              "browserTarget": "ng-admin:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-admin:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-admin/src/test.ts",
+            "polyfills": "projects/ng-admin/src/polyfills.ts",
+            "tsConfig": "projects/ng-admin/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-admin/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ng-admin/src/favicon.ico",
+              "projects/ng-admin/src/assets"
+            ],
+            "styles": [
+              "projects/ng-admin/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
   }
 }
