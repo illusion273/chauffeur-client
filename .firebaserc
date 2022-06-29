@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "chauffeur-123456": {
+      "hosting": {
+        "ng-auth": [
+          "chauffeur-123456"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "chauffeur-123456"
+  }
+}

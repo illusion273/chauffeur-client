@@ -102,6 +102,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "ng-auth:build:production",
+            "firebaseProject": "chauffeur-123456",
+            "firebaseHostingSite": "chauffeur-123456"
+          }
         }
       }
     },
