@@ -12,9 +12,9 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 
 import { AppComponent } from './app.component';
-import { SigninFormComponent } from './signin-form/signin-form.component';
-import { SignupFormComponent } from './signup-form/signup-form.component';
-import { AuthComponent } from './auth/auth.component';
+import { SigninFormComponent } from './components/signin-form/signin-form.component';
+import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { AuthComponent } from './auth/auth.component';
     AppComponent,
     SigninFormComponent,
     SignupFormComponent,
-    AuthComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,

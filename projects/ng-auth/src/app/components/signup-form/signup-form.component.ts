@@ -5,7 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { PW_MIN_LENGTH, PW_REGEX } from '../common/constants';
+import { PW_MIN_LENGTH, PW_REGEX } from '../../common/constants';
 
 @Component({
   selector: 'app-signup-form',

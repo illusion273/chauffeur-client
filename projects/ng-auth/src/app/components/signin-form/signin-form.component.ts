@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { PW_MIN_LENGTH, PW_REGEX } from '../common/constants';
+import { PW_MIN_LENGTH, PW_REGEX } from '../../common/constants';
 
 @Component({
   selector: 'app-signin-form',
